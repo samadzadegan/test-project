@@ -1,0 +1,16 @@
+<ng-container *ngIf="!isLoaded">
+  <h3>
+    Loading...
+  </h3>
+</ng-container>
+
+<ng-container *ngIf="posts">
+  <ng-container *ngFor="let item of posts">
+    <div class="card w-50 mx-auto mt-3" (click)="navigateToDetails(item.id)">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text cut-text">{{ item.body }}</p>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
